@@ -279,3 +279,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Output from IL project
+Recursion/CollatzConjectureWithIL/*.dll
