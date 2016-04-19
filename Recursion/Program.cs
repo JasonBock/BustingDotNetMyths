@@ -7,9 +7,9 @@ namespace Recursion
 	{
 		static void Main(string[] args)
 		{
-			Program.CollatzWithoutRecursion();
-			//Program.CollatzWithRecursion();
-			Program.CollatzUsingTailCall();
+			//Program.CollatzWithoutRecursion();
+			Program.CollatzWithRecursion();
+			//Program.CollatzUsingTailCall();
 		}
 
 		private static void CollatzWithoutRecursion()
