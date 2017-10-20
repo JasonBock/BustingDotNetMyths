@@ -1,4 +1,5 @@
-﻿using CollatzConjectureWithIL;
+﻿using BenchmarkDotNet.Running;
+using CollatzConjectureWithIL;
 using System;
 
 namespace Recursion
@@ -8,7 +9,8 @@ namespace Recursion
 		static void Main(string[] args) =>
 			//Program.CollatzWithoutRecursion();
 			//Program.CollatzWithRecursion();
-			Program.CollatzUsingTailCall();
+			//Program.CollatzUsingTailCall();
+			BenchmarkRunner.Run<RecursionPerformance>();
 
 		private static void CollatzWithoutRecursion()
 		{
