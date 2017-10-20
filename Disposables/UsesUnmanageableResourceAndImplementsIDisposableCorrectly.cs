@@ -10,10 +10,8 @@ namespace Disposables
 		private UnmanageableResource resource =
 			new UnmanageableResource();
 
-		public UsesUnmanageableResourceAndImplementsIDisposableCorrectly()
-		{
+		public UsesUnmanageableResourceAndImplementsIDisposableCorrectly() => 
 			this.resource = new UnmanageableResource();
-		}
 
 		public void Dispose()
 		{
@@ -21,10 +19,8 @@ namespace Disposables
 			GC.SuppressFinalize(this);
 		}
 
-		~UsesUnmanageableResourceAndImplementsIDisposableCorrectly()
-		{
+		~UsesUnmanageableResourceAndImplementsIDisposableCorrectly() =>
 			this.Dispose(false);
-		}
 
 		protected virtual void Dispose(bool disposing)
 		{
@@ -37,10 +33,10 @@ namespace Disposables
 				}
 			}
 
-			if (nativeResource != IntPtr.Zero)
+			if (this.nativeResource != IntPtr.Zero)
 			{
-				Marshal.FreeHGlobal(nativeResource);
-				nativeResource = IntPtr.Zero;
+				Marshal.FreeHGlobal(this.nativeResource);
+				this.nativeResource = IntPtr.Zero;
 			}
 		}
 	}

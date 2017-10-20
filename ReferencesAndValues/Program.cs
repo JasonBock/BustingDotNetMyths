@@ -2,9 +2,9 @@
 
 namespace ReferencesAndValues
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			var referenceData1 = new ReferenceData(1);
 			var referenceData2 = referenceData1;

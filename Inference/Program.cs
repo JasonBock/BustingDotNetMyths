@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 namespace Inference
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
+#pragma warning disable IDE0007 // Use implicit type
 			int xExplicit = 41;
+#pragma warning restore IDE0007 // Use implicit type
 			Console.Out.WriteLine(xExplicit.GetType().FullName);
 			var xInferred = 44;
 			Console.Out.WriteLine(xInferred.GetType().FullName);
@@ -45,8 +47,7 @@ namespace Inference
 			//dynamicBase.DoSomething();
 			//dynamicBase.
 
-			var n1 = 1;
-			double n2 = 3.0/2.0;
+
 		}
 	}
 

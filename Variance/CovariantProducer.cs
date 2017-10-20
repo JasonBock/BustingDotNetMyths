@@ -3,9 +3,6 @@
 	public sealed class CovariantProducer<T>
 		: ICovariantProducer<T> where T : new()
 	{
-		public T Produce()
-		{
-			return new T();
-		}
+		public T Produce() => new T();
 	}
 }

@@ -1,20 +1,16 @@
-﻿using Nito.AsyncEx;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Async
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		public static async Task Main(string[] args)
 		{
-			AsyncContext.Run(async () =>
-			{
-				await Program.WriteAsync();
-				await Program.RunNewTask();
-				Console.Out.WriteLine("Finished");
-			});
+			await Program.WriteAsync();
+			await Program.RunNewTaskAsync();
+			await Console.Out.WriteLineAsync("Finished");
 		}
 
 		private static async Task WriteAsync()
@@ -25,9 +21,7 @@ namespace Async
 			await Console.Out.WriteLineAsync(vsLiveData);
 		}
 
-		private static async Task RunNewTask()
-		{
+		private static async Task RunNewTaskAsync() =>
 			await Task.Run(() => Task.Delay(1000));
-		}
 	}
 }

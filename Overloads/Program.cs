@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Overloads
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			var generator = new ValueGenerator();
 
@@ -20,27 +20,13 @@ namespace Overloads
 				$"{value}, type is {value.GetType().Name}");
 
 			Program.CallItB(new object(), new object());
-			Program.CallItA(new Program(), new Program());
+			Program.CallItA(new Stuff(), new Stuff());
 		}
 
-		// Can't do this:
-		/*
-		public int Run(int a) { return 0; }
-		public Guid Run(int a) { return Guid.NewGuid(); }
-		*/
-
-		public void Run(int a) { }
-		public void Run(Guid a) { }
-		public void Run(int a, string b) { }
-
-		public static void CallItA<T>(object o, T t)
-		{
+		public static void CallItA<T>(object o, T t) =>
 			Console.Out.WriteLine("object o, T t");
-		}
 
-		public static void CallItB<T>(T t, object o)
-		{
+		public static void CallItB<T>(T t, object o) =>
 			Console.Out.WriteLine("T t, object o");
-		}
 	}
 }

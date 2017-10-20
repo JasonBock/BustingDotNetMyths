@@ -8,9 +8,7 @@ namespace Disposables
 		private readonly UnmanageableResource resource =
 			new UnmanageableResource();
 
-		public void Dispose()
-		{
+		public void Dispose() => 
 			this.resource.Free();
-		}
 	}
 }

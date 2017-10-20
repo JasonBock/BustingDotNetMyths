@@ -1,27 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Variance
 {
-public sealed class VariantList<TIn, TOut>
-	: IVariantList<TIn, TOut>
-	where TIn : TOut
-{
-	private readonly List<TIn> items = new List<TIn>();
-
-	public TOut Get(int index)
+	public sealed class VariantList<TIn, TOut>
+		: IVariantList<TIn, TOut>
+		where TIn : TOut
 	{
-		return this.items[index];
-	}
+		private readonly List<TIn> items = new List<TIn>();
 
-	public int IndexOf(TIn item)
-	{
-		return this.items.IndexOf(item);
-	}
+		public TOut Get(int index) => this.items[index];
 
-	public void Set(int index, TIn value)
-	{
-		this.items[index] = value;
+		public int IndexOf(TIn item) => this.items.IndexOf(item);
+
+		public void Set(int index, TIn value) => this.items[index] = value;
 	}
-}
 }

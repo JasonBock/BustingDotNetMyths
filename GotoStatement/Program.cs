@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace GotoStatement
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
-		{
+		public static void Main(string[] args) => 
 			Program.JumpAround();
-		}
 
 		private static void JumpAround()
 		{
@@ -45,14 +42,6 @@ namespace GotoStatement
 			Console.Out.WriteLine("Let me begin");
 			Console.Out.WriteLine("I came to win");
 			Console.Out.WriteLine("Battle me that's a sin");
-		}
-
-		private static void CheckArgument(string value)
-		{
-			if(value == null)
-			{
-				throw new ArgumentNullException(nameof(value));
-			}
 		}
 
 		private static IEnumerable<string> ProduceLyrics()

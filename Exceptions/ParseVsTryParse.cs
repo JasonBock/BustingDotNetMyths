@@ -18,10 +18,7 @@ namespace Exceptions
 		}
 
 		[Benchmark]
-		public void TryParse()
-		{
-			var result = 0;
-			int.TryParse(ParseVsTryParse.BadValue, out result);
-		}
+		public void TryParse() =>
+			int.TryParse(ParseVsTryParse.BadValue, out var result);
 	}
 }

@@ -1,17 +1,11 @@
 ﻿namespace ReferencesAndValues
 {
-public sealed class ReferenceData
-{
-	public ReferenceData(int data)
+	public sealed class ReferenceData
 	{
-		this.Data = data;
-	}
+		public ReferenceData(int data) => this.Data = data;
 
-	public void Increment()
-	{
-		this.Data++;
-	}
+		public void Increment() => this.Data++;
 
-	public int Data { get; private set; }
-}
+		public int Data { get; private set; }
+	}
 }
