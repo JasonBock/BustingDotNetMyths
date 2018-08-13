@@ -1,27 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variance", "Variance\Variance.csproj", "{D628F403-88BA-4518-BB28-4D208EAABBDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Variance", "Variance\Variance.csproj", "{D628F403-88BA-4518-BB28-4D208EAABBDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GotoStatement", "GotoStatement\GotoStatement.csproj", "{26F6158F-370A-427C-9B4C-C5055D3BC7D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GotoStatement", "GotoStatement\GotoStatement.csproj", "{26F6158F-370A-427C-9B4C-C5055D3BC7D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion", "Recursion\Recursion.csproj", "{73AF7E04-938A-49FC-A93C-DC349C2DB424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursion", "Recursion\Recursion.csproj", "{73AF7E04-938A-49FC-A93C-DC349C2DB424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{70144E14-A4BF-4B51-B872-0C01298CEBF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{70144E14-A4BF-4B51-B872-0C01298CEBF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStacks", "CallStacks\CallStacks.csproj", "{0EDBDADB-C2D6-470E-AE79-441E4CC8189A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallStacks", "CallStacks\CallStacks.csproj", "{0EDBDADB-C2D6-470E-AE79-441E4CC8189A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disposables", "Disposables\Disposables.csproj", "{0B1BBCDC-BAF8-4FAA-85A7-D0D02EEBF5EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Disposables", "Disposables\Disposables.csproj", "{0B1BBCDC-BAF8-4FAA-85A7-D0D02EEBF5EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overloads", "Overloads\Overloads.csproj", "{A202DAC6-CA14-4901-817D-BEE0E35F3D51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overloads", "Overloads\Overloads.csproj", "{A202DAC6-CA14-4901-817D-BEE0E35F3D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{7E3C8020-2B0A-4E6B-B2FA-31B07A6AD5BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Async", "Async\Async.csproj", "{7E3C8020-2B0A-4E6B-B2FA-31B07A6AD5BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferencesAndValues", "ReferencesAndValues\ReferencesAndValues.csproj", "{6828222E-A00F-4750-8933-ED987A375FFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReferencesAndValues", "ReferencesAndValues\ReferencesAndValues.csproj", "{6828222E-A00F-4750-8933-ED987A375FFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inference", "Inference\Inference.csproj", "{29276BCA-9D81-4011-89DF-1AEB42950838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inference", "Inference\Inference.csproj", "{29276BCA-9D81-4011-89DF-1AEB42950838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concatenation", "Concatenation\Concatenation.csproj", "{3EC6F0C5-FDE8-471E-90E3-514EBCFA09BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,8 +71,15 @@ Global
 		{29276BCA-9D81-4011-89DF-1AEB42950838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29276BCA-9D81-4011-89DF-1AEB42950838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29276BCA-9D81-4011-89DF-1AEB42950838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC6F0C5-FDE8-471E-90E3-514EBCFA09BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC6F0C5-FDE8-471E-90E3-514EBCFA09BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC6F0C5-FDE8-471E-90E3-514EBCFA09BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC6F0C5-FDE8-471E-90E3-514EBCFA09BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97663B4E-0017-4157-9095-21BB7864E91F}
 	EndGlobalSection
 EndGlobal
