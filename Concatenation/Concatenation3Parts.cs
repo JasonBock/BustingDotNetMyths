@@ -10,7 +10,7 @@ namespace Concatenation
 		private static readonly string dataOf25Length = StringCreation.Create(25);
 		private static readonly string dataOf200Length = StringCreation.Create(200);
 
-		[Benchmark]
+		[Benchmark(Baseline = true)]
 		public int ConcatenateWithAddition() =>
 			(Concatenation3Parts.dataOf5Length + " and " +
 			Concatenation3Parts.dataOf200Length + " and " +

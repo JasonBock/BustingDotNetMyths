@@ -1,25 +1,34 @@
 ﻿Concatenation3Parts
 
-                       Method |      Mean |    Error |   StdDev |  Gen 0 | Allocated |
------------------------------ |----------:|---------:|---------:|-------:|----------:|
-      ConcatenateWithAddition |  77.96 ns | 1.128 ns | 1.000 ns | 0.1372 |     576 B |
- ConcatenateWithStringBuilder | 179.00 ns | 1.284 ns | 1.002 ns | 0.3755 |    1576 B |
- ConcatenateWithInterpolation | 344.84 ns | 4.204 ns | 3.933 ns | 0.3753 |    1576 B |
+                       Method |      Mean |     Error |    StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
+----------------------------- |----------:|----------:|----------:|-------:|---------:|-------:|----------:|
+      ConcatenateWithAddition |  78.02 ns | 0.3950 ns | 0.3695 ns |   1.00 |     0.00 | 0.1372 |     576 B |
+ ConcatenateWithStringBuilder | 176.20 ns | 1.4600 ns | 1.2191 ns |   2.26 |     0.02 | 0.3755 |    1576 B |
+ ConcatenateWithInterpolation | 340.41 ns | 4.7579 ns | 3.9731 ns |   4.36 |     0.05 | 0.3753 |    1576 B |
 
 
 Concatenation9Parts
 
-                       Method |     Mean |     Error |    StdDev |  Gen 0 | Allocated |
------------------------------ |---------:|----------:|----------:|-------:|----------:|
-      ConcatenateWithAddition | 237.9 ns |  2.681 ns |  2.376 ns | 0.3924 |   1.61 KB |
- ConcatenateWithStringBuilder | 407.5 ns |  7.461 ns |  6.614 ns | 0.8254 |   3.38 KB |
- ConcatenateWithInterpolation | 952.0 ns | 18.364 ns | 17.178 ns | 0.9785 |   4.01 KB |
+                       Method |     Mean |     Error |    StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
+----------------------------- |---------:|----------:|----------:|-------:|---------:|-------:|----------:|
+      ConcatenateWithAddition | 236.3 ns |  2.672 ns |  2.499 ns |   1.00 |     0.00 | 0.3924 |   1.61 KB |
+ ConcatenateWithStringBuilder | 383.7 ns |  4.309 ns |  3.820 ns |   1.62 |     0.02 | 0.8254 |   3.38 KB |
+ ConcatenateWithInterpolation | 906.8 ns | 13.437 ns | 12.569 ns |   3.84 |     0.06 | 0.9785 |   4.01 KB |
 
 
 Concatenation30Parts
 
-                       Method |       Mean |     Error |    StdDev |  Gen 0 | Allocated |
------------------------------ |-----------:|----------:|----------:|-------:|----------:|
-      ConcatenateWithAddition |   796.5 ns |  7.745 ns |  6.468 ns | 1.2903 |   5.29 KB |
- ConcatenateWithStringBuilder | 1,219.9 ns | 21.992 ns | 20.571 ns | 2.8763 |  11.80 KB |
- ConcatenateWithInterpolation | 2,733.7 ns | 45.426 ns | 42.492 ns | 3.1929 |  13.09 KB |
+                       Method |       Mean |     Error |    StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
+----------------------------- |-----------:|----------:|----------:|-------:|---------:|-------:|----------:|
+      ConcatenateWithAddition |   797.0 ns |  6.648 ns |  5.893 ns |   1.00 |     0.00 | 1.2903 |   5.29 KB |
+ ConcatenateWithStringBuilder | 1,177.4 ns |  4.353 ns |  3.635 ns |   1.48 |     0.01 | 2.8763 |  11.80 KB |
+ ConcatenateWithInterpolation | 2,664.6 ns | 12.161 ns | 11.376 ns |   3.34 |     0.03 | 3.1929 |  13.09 KB |
+
+
+Concatenation300Parts
+
+                       Method |      Mean |     Error |    StdDev | Scaled | ScaledSD |   Gen 0 |  Gen 1 | Allocated |
+----------------------------- |----------:|----------:|----------:|-------:|---------:|--------:|-------:|----------:|
+      ConcatenateWithAddition |  7.760 us | 0.1515 us | 0.1417 us |   1.00 |     0.00 | 12.8174 |      - |  52.57 KB |
+ ConcatenateWithStringBuilder | 11.002 us | 0.0664 us | 0.0588 us |   1.42 |     0.03 | 25.6348 | 4.2572 | 106.09 KB |
+ ConcatenateWithInterpolation | 23.690 us | 0.3295 us | 0.2921 us |   3.05 |     0.06 | 24.9939 |      - | 102.42 KB |

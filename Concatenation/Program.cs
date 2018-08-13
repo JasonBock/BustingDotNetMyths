@@ -5,6 +5,6 @@ namespace Concatenation
 	class Program
 	{
 		static void Main(string[] args) =>
-			BenchmarkRunner.Run<Concatenation30Parts>();
+			BenchmarkRunner.Run<Concatenation300Parts>();
 	}
 }
