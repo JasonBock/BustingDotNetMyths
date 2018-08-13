@@ -46,8 +46,6 @@ namespace Inference
 			//	new ABase() as IBase : new BBase();
 			//dynamicBase.DoSomething();
 			//dynamicBase.
-
-
 		}
 	}
 

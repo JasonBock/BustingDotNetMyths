@@ -5,6 +5,8 @@ namespace GotoStatement
 {
 	public static class Program
 	{
+		//Program.JumpAround();
+		//Program.JumpAroundGotoFree();
 		public static void Main(string[] args) => 
 			Program.JumpAround();
 

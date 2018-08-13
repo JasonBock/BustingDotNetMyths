@@ -9,7 +9,6 @@ namespace Overloads
 		public static void Main(string[] args)
 		{
 			var generator = new ValueGenerator();
-
 			var getValueIntMethod = typeof(ValueGenerator)
 				.GetMethods()
 				.Single(_ => _.Name == nameof(ValueGenerator.GetValue) &&

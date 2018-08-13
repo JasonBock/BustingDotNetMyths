@@ -6,10 +6,11 @@ namespace Recursion
 {
 	public static class Program
 	{
+		//Program.CollatzWithoutRecursion();
+		//Program.CollatzWithRecursion();
+		//Program.CollatzUsingTailCall();
+		//BenchmarkRunner.Run<RecursionPerformance>();
 		static void Main(string[] args) =>
-			//Program.CollatzWithoutRecursion();
-			//Program.CollatzWithRecursion();
-			//Program.CollatzUsingTailCall();
 			BenchmarkRunner.Run<RecursionPerformance>();
 
 		private static void CollatzWithoutRecursion()

@@ -4,6 +4,7 @@ using System.Numerics;
 
 namespace Recursion
 {
+	[MemoryDiagnoser]
 	public class RecursionPerformance
 	{
 		[Benchmark]
