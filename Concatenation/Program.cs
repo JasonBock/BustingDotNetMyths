@@ -4,7 +4,7 @@ namespace Concatenation
 {
 	class Program
 	{
-		static void Main(string[] args) =>
-			BenchmarkRunner.Run<Concatenation300Parts>();
+		static void Main(string[] args) => 
+			BenchmarkRunner.Run<Concatenation3Parts>();
 	}
 }
