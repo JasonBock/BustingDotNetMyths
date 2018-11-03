@@ -4,6 +4,7 @@ using System.Text;
 namespace Concatenation
 {
 	[MemoryDiagnoser]
+	[ClrJob, CoreJob]
 	public class Concatenation9Parts
 	{
 		private static readonly string dataOf5Length = StringCreation.Create(5);

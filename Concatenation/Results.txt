@@ -1,77 +1,53 @@
-﻿.NET Core SDK=2.1.400
-  [Host]     : .NET Core 2.1.2 (CoreCLR 4.6.26628.05, CoreFX 4.6.26629.01), 64bit RyuJIT
-  DefaultJob : .NET Core 2.1.2 (CoreCLR 4.6.26628.05, CoreFX 4.6.26629.01), 64bit RyuJIT
-
-  [Host]     : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3130.0
-  DefaultJob : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3130.0
+﻿.NET Core 2.1.5
+.NET Framework 4.7.1
 
 Concatenation3Parts
-(.NET Core 2.1)
 
-                       Method |      Mean |    Error |    StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
------------------------------ |----------:|---------:|----------:|-------:|---------:|-------:|----------:|
-      ConcatenateWithAddition |  93.42 ns | 1.097 ns | 1.0266 ns |   1.00 |     0.00 | 0.1372 |     576 B |
- ConcatenateWithStringBuilder | 213.17 ns | 2.001 ns | 1.8717 ns |   2.28 |     0.03 | 0.3755 |    1576 B |
- ConcatenateWithInterpolation |  93.11 ns | 1.044 ns | 0.8717 ns |   1.00 |     0.01 | 0.1372 |     576 B |
-
-(.NET Framework 4.7.1)
-
-                       Method |     Mean |    Error |   StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
------------------------------ |---------:|---------:|---------:|-------:|---------:|-------:|----------:|
-      ConcatenateWithAddition | 117.9 ns | 2.326 ns | 3.260 ns |   1.00 |     0.00 | 0.1525 |     640 B |
- ConcatenateWithStringBuilder | 220.1 ns | 2.298 ns | 2.037 ns |   1.87 |     0.05 | 0.3755 |    1576 B |
- ConcatenateWithInterpolation | 111.2 ns | 1.353 ns | 1.130 ns |   0.94 |     0.03 | 0.1525 |     640 B |
+                       Method |  Job | Runtime |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0/1k Op | Gen 1/1k Op | Gen 2/1k Op | Allocated Memory/Op |
+----------------------------- |----- |-------- |----------:|----------:|----------:|------:|--------:|------------:|------------:|------------:|--------------------:|
+      ConcatenateWithAddition |  Clr |     Clr |  93.93 ns | 0.2933 ns | 0.2290 ns |  1.00 |    0.00 |      0.1525 |           - |           - |               640 B |
+ ConcatenateWithStringBuilder |  Clr |     Clr | 191.33 ns | 3.6779 ns | 4.0879 ns |  2.03 |    0.05 |      0.3755 |           - |           - |              1576 B |
+ ConcatenateWithInterpolation |  Clr |     Clr | 100.19 ns | 1.9920 ns | 2.4464 ns |  1.06 |    0.03 |      0.1525 |           - |           - |               640 B |
+                              |      |         |           |           |           |       |         |             |             |             |                     |
+      ConcatenateWithAddition | Core |    Core |  79.47 ns | 0.3023 ns | 0.2360 ns |  1.00 |    0.00 |      0.1372 |           - |           - |               576 B |
+ ConcatenateWithStringBuilder | Core |    Core | 200.21 ns | 3.3682 ns | 2.9858 ns |  2.52 |    0.04 |      0.3755 |           - |           - |              1576 B |
+ ConcatenateWithInterpolation | Core |    Core |  84.30 ns | 1.6565 ns | 1.9719 ns |  1.06 |    0.02 |      0.1372 |           - |           - |               576 B |
 
 
 Concatenation9Parts
-(.NET Core 2.1)
 
-                       Method |     Mean |    Error |   StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
------------------------------ |---------:|---------:|---------:|-------:|---------:|-------:|----------:|
-      ConcatenateWithAddition | 288.8 ns | 4.398 ns | 3.673 ns |   1.00 |     0.00 | 0.3924 |   1.61 KB |
- ConcatenateWithStringBuilder | 476.8 ns | 9.530 ns | 8.915 ns |   1.65 |     0.04 | 0.8249 |   3.38 KB |
- ConcatenateWithInterpolation | 280.4 ns | 4.127 ns | 3.659 ns |   0.97 |     0.02 | 0.3924 |   1.61 KB |
-
-(.NET Framework 4.7.1)
-
-                       Method |     Mean |    Error |    StdDev |   Median | Scaled | ScaledSD |  Gen 0 | Allocated |
------------------------------ |---------:|---------:|----------:|---------:|-------:|---------:|-------:|----------:|
-      ConcatenateWithAddition | 346.7 ns | 2.980 ns |  2.642 ns | 346.5 ns |   1.00 |     0.00 | 0.4306 |   1.77 KB |
- ConcatenateWithStringBuilder | 491.2 ns | 8.974 ns |  7.955 ns | 488.6 ns |   1.42 |     0.02 | 0.8249 |   3.38 KB |
- ConcatenateWithInterpolation | 370.8 ns | 7.422 ns | 21.054 ns | 362.2 ns |   1.07 |     0.06 | 0.4306 |   1.77 KB |
+                       Method |  Job | Runtime |     Mean |    Error |    StdDev |   Median | Ratio | RatioSD | Gen 0/1k Op | Gen 1/1k Op | Gen 2/1k Op | Allocated Memory/Op |
+----------------------------- |----- |-------- |---------:|---------:|----------:|---------:|------:|--------:|------------:|------------:|------------:|--------------------:|
+      ConcatenateWithAddition |  Clr |     Clr | 304.9 ns | 3.169 ns |  2.647 ns | 306.2 ns |  1.00 |    0.00 |      0.4306 |           - |           - |             1.77 KB |
+ ConcatenateWithStringBuilder |  Clr |     Clr | 415.3 ns | 8.329 ns | 15.643 ns | 405.6 ns |  1.34 |    0.05 |      0.8254 |           - |           - |             3.38 KB |
+ ConcatenateWithInterpolation |  Clr |     Clr | 306.3 ns | 1.853 ns |  1.643 ns | 306.6 ns |  1.00 |    0.01 |      0.4306 |           - |           - |             1.77 KB |
+                              |      |         |          |          |           |          |       |         |             |             |             |                     |
+      ConcatenateWithAddition | Core |    Core | 246.9 ns | 4.794 ns |  6.063 ns | 244.0 ns |  1.00 |    0.00 |      0.3924 |           - |           - |             1.61 KB |
+ ConcatenateWithStringBuilder | Core |    Core | 432.0 ns | 3.603 ns |  3.008 ns | 432.4 ns |  1.75 |    0.05 |      0.8249 |           - |           - |             3.38 KB |
+ ConcatenateWithInterpolation | Core |    Core | 257.3 ns | 1.387 ns |  1.297 ns | 257.1 ns |  1.04 |    0.02 |      0.3924 |           - |           - |             1.61 KB |
 
 
 Concatenation30Parts
-(.NET Core 2.1)
 
-                       Method |       Mean |    Error |   StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
------------------------------ |-----------:|---------:|---------:|-------:|---------:|-------:|----------:|
-      ConcatenateWithAddition |   995.2 ns | 21.02 ns | 30.14 ns |   1.00 |     0.00 | 1.2894 |   5.29 KB |
- ConcatenateWithStringBuilder | 1,552.2 ns | 15.07 ns | 12.58 ns |   1.56 |     0.05 | 2.8763 |   11.8 KB |
- ConcatenateWithInterpolation |   963.4 ns | 11.30 ns | 10.57 ns |   0.97 |     0.03 | 1.2894 |   5.29 KB |
-
-(.NET Framework 4.7.1)
-
-                       Method |     Mean |     Error |    StdDev |   Median | Scaled | ScaledSD |  Gen 0 | Allocated |
------------------------------ |---------:|----------:|----------:|---------:|-------:|---------:|-------:|----------:|
-      ConcatenateWithAddition | 1.231 us | 0.0276 us | 0.0792 us | 1.196 us |   1.00 |     0.00 | 1.4076 |   5.78 KB |
- ConcatenateWithStringBuilder | 1.655 us | 0.0328 us | 0.0791 us | 1.648 us |   1.35 |     0.10 | 2.8763 |   11.8 KB |
- ConcatenateWithInterpolation | 1.298 us | 0.0248 us | 0.0220 us | 1.300 us |   1.06 |     0.07 | 1.4076 |   5.78 KB |
+                       Method |  Job | Runtime |       Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0/1k Op | Gen 1/1k Op | Gen 2/1k Op | Allocated Memory/Op |
+----------------------------- |----- |-------- |-----------:|----------:|----------:|------:|--------:|------------:|------------:|------------:|--------------------:|
+      ConcatenateWithAddition |  Clr |     Clr | 1,043.7 ns |  6.441 ns |  5.379 ns |  1.00 |    0.00 |      1.4076 |           - |           - |             5.78 KB |
+ ConcatenateWithStringBuilder |  Clr |     Clr | 1,348.7 ns | 24.576 ns | 22.989 ns |  1.30 |    0.01 |      2.8763 |           - |           - |             11.8 KB |
+ ConcatenateWithInterpolation |  Clr |     Clr | 1,039.7 ns | 19.757 ns | 17.514 ns |  1.00 |    0.02 |      1.4076 |           - |           - |             5.78 KB |
+                              |      |         |            |           |           |       |         |             |             |             |                     |
+      ConcatenateWithAddition | Core |    Core |   827.9 ns |  4.974 ns |  4.153 ns |  1.00 |    0.00 |      1.2894 |           - |           - |             5.29 KB |
+ ConcatenateWithStringBuilder | Core |    Core | 1,380.3 ns | 25.029 ns | 20.901 ns |  1.67 |    0.03 |      2.8763 |           - |           - |             11.8 KB |
+ ConcatenateWithInterpolation | Core |    Core |   856.1 ns | 17.091 ns | 27.598 ns |  1.01 |    0.04 |      1.2903 |           - |           - |             5.29 KB |
 
 
-Concatenation300Parts 
-(.NET Core 2.1)
+Concatenation300Parts
 
-                       Method |      Mean |     Error |    StdDev | Scaled |   Gen 0 |  Gen 1 | Allocated |
------------------------------ |----------:|----------:|----------:|-------:|--------:|-------:|----------:|
-      ConcatenateWithAddition |  9.367 us | 0.0431 us | 0.0403 us |   1.00 | 12.8174 |      - |  52.57 KB |
- ConcatenateWithStringBuilder | 13.573 us | 0.1504 us | 0.1256 us |   1.45 | 25.6348 | 4.2572 | 106.09 KB |
- ConcatenateWithInterpolation |  9.308 us | 0.0699 us | 0.0546 us |   0.99 | 12.8174 |      - |  52.57 KB |
-
-(.NET Framework 4.7.1)
-
-                       Method |     Mean |     Error |    StdDev | Scaled | ScaledSD |   Gen 0 |  Gen 1 | Allocated |
------------------------------ |---------:|----------:|----------:|-------:|---------:|--------:|-------:|----------:|
-      ConcatenateWithAddition | 11.49 us | 0.1914 us | 0.1697 us |   1.00 |     0.00 | 13.8855 |      - |  57.33 KB |
- ConcatenateWithStringBuilder | 13.90 us | 0.1964 us | 0.1533 us |   1.21 |     0.02 | 25.6348 | 4.2572 | 106.17 KB |
- ConcatenateWithInterpolation | 12.40 us | 0.2300 us | 0.1921 us |   1.08 |     0.02 | 13.8855 |      - |  57.33 KB |
+                       Method |  Job | Runtime |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0/1k Op | Gen 1/1k Op | Gen 2/1k Op | Allocated Memory/Op |
+----------------------------- |----- |-------- |----------:|----------:|----------:|------:|--------:|------------:|------------:|------------:|--------------------:|
+      ConcatenateWithAddition |  Clr |     Clr | 10.445 us | 0.0935 us | 0.0829 us |  1.00 |    0.00 |     13.8855 |           - |           - |            57.33 KB |
+ ConcatenateWithStringBuilder |  Clr |     Clr | 12.604 us | 0.0151 us | 0.0126 us |  1.21 |    0.01 |     25.6348 |      4.2572 |           - |           106.17 KB |
+ ConcatenateWithInterpolation |  Clr |     Clr | 10.369 us | 0.1402 us | 0.1243 us |  0.99 |    0.01 |     13.8855 |           - |           - |            57.33 KB |
+                              |      |         |           |           |           |       |         |             |             |             |                     |
+      ConcatenateWithAddition | Core |    Core |  8.283 us | 0.0251 us | 0.0196 us |  1.00 |    0.00 |     12.8174 |           - |           - |            52.57 KB |
+ ConcatenateWithStringBuilder | Core |    Core | 12.842 us | 0.1504 us | 0.1174 us |  1.55 |    0.01 |     25.6348 |      4.2572 |           - |           106.09 KB |
+ ConcatenateWithInterpolation | Core |    Core |  8.561 us | 0.1675 us | 0.2403 us |  1.02 |    0.04 |     12.8174 |           - |           - |            52.57 KB |
