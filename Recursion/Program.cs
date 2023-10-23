@@ -1,12 +1,11 @@
 ﻿using BenchmarkDotNet.Running;
+using CollatzConjectureWithIL;
 using Recursion;
 
 //CollatzWithoutRecursion();
-//CollatzWithRecursion();
+CollatzWithRecursion();
 //CollatzUsingTailCall();
 //BenchmarkRunner.Run<RecursionPerformance>();
-
-BenchmarkRunner.Run<RecursionPerformance>();
 
 static void CollatzWithoutRecursion()
 {
