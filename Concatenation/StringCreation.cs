@@ -1,20 +1,19 @@
 ﻿using Spackle;
 
-namespace Concatenation
+namespace Concatenation;
+
+internal static class StringCreation
 {
-	internal static class StringCreation
+	internal static string Create(int length)
 	{
-		internal static string Create(int length)
+		using var random = new SecureRandom();
+		var data = new char[length];
+
+		for (var i = 0; i < length; i++)
 		{
-			var random = new SecureRandom();
-			var data = new char[length];
-
-			for(var i = 0; i < length; i++)
-			{
-				data[i] = (char)random.Next(32, 127);
-			}
-
-			return new string(data);
+			data[i] = (char)random.Next(32, 127);
 		}
+
+		return new string(data);
 	}
 }

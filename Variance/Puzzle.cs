@@ -1,4 +1,3 @@
-﻿namespace Variance
-{
-	public class Puzzle { }
-}
+﻿namespace Variance;
+
+public class Puzzle { }

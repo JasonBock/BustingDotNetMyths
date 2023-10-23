@@ -1,8 +1,7 @@
-﻿namespace Variance
+﻿namespace Variance;
+
+public interface IInvariantProducer<T>
+	where T : new()
 {
-	public interface IInvariantProducer<T>
-		where T : new()
-	{
-		T Produce();
-	}
+	T Produce();
 }

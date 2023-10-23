@@ -1,43 +1,40 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
-namespace Disposables
+namespace Disposables;
+
+public class UsesUnmanageableResourceAndImplementsIDisposableCorrectly
+	: IDisposable
 {
-	public class UsesUnmanageableResourceAndImplementsIDisposableCorrectly
-		: IDisposable
+	private IntPtr nativeResource = Marshal.AllocHGlobal(10);
+	private UnmanageableResource? resource = new();
+
+	public UsesUnmanageableResourceAndImplementsIDisposableCorrectly() =>
+		this.resource = new UnmanageableResource();
+
+	public void Dispose()
 	{
-		private IntPtr nativeResource = Marshal.AllocHGlobal(10);
-		private UnmanageableResource resource =
-			new UnmanageableResource();
+		this.Dispose(true);
+		GC.SuppressFinalize(this);
+	}
 
-		public UsesUnmanageableResourceAndImplementsIDisposableCorrectly() => 
-			this.resource = new UnmanageableResource();
+	~UsesUnmanageableResourceAndImplementsIDisposableCorrectly() =>
+		this.Dispose(false);
 
-		public void Dispose()
+	protected virtual void Dispose(bool disposing)
+	{
+		if (disposing)
 		{
-			this.Dispose(true);
-			GC.SuppressFinalize(this);
+			if (this.resource is not null)
+			{
+				this.resource.Free();
+				this.resource = null;
+			}
 		}
 
-		~UsesUnmanageableResourceAndImplementsIDisposableCorrectly() =>
-			this.Dispose(false);
-
-		protected virtual void Dispose(bool disposing)
+		if (this.nativeResource != IntPtr.Zero)
 		{
-			if (disposing)
-			{
-				if (this.resource != null)
-				{
-					this.resource.Free();
-					this.resource = null;
-				}
-			}
-
-			if (this.nativeResource != IntPtr.Zero)
-			{
-				Marshal.FreeHGlobal(this.nativeResource);
-				this.nativeResource = IntPtr.Zero;
-			}
+			Marshal.FreeHGlobal(this.nativeResource);
+			this.nativeResource = IntPtr.Zero;
 		}
 	}
 }

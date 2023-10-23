@@ -1,29 +1,28 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
+using System.Globalization;
 
-namespace Exceptions
+namespace Exceptions;
+
+[MemoryDiagnoser]
+public class ParseVsTryParse
 {
-	[MemoryDiagnoser]
-	public class ParseVsTryParse
+	private const string BadValue = "7r83o4uf8ael";
+
+	[Benchmark]
+	public bool Parse()
 	{
-		private const string BadValue = "7r83o4uf8ael";
-
-		[Benchmark]
-		public bool Parse()
+		try
 		{
-			try
-			{
-				int.Parse(ParseVsTryParse.BadValue);
-				return true;
-			}
-			catch (FormatException)
-			{
-				return false;
-			}
+			int.Parse(ParseVsTryParse.BadValue, CultureInfo.CurrentCulture);
+			return true;
 		}
-
-		[Benchmark]
-		public bool TryParse() =>
-			int.TryParse(ParseVsTryParse.BadValue, out var result);
+		catch (FormatException)
+		{
+			return false;
+		}
 	}
+
+	[Benchmark]
+	public bool TryParse() =>
+		int.TryParse(ParseVsTryParse.BadValue, out var _);
 }

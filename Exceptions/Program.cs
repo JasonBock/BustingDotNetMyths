@@ -1,10 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
+using Exceptions;
 
-namespace Exceptions
-{
-	public static class Program
-	{
-		public static void Main(string[] args) =>
-			BenchmarkRunner.Run<ParseVsTryParse>();
-	}
-}
+BenchmarkRunner.Run<ParseVsTryParse>();

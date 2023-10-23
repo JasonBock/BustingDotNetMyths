@@ -1,6 +1,5 @@
-﻿namespace Variance
-{
-	public sealed class CombinationPuzzle
-		: Puzzle
-	{ }
-}
+﻿namespace Variance;
+
+public sealed class CombinationPuzzle
+	: Puzzle
+{ }

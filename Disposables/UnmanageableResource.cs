@@ -1,7 +1,6 @@
-﻿namespace Disposables
+﻿namespace Disposables;
+
+public sealed class UnmanageableResource
 {
-	public sealed class UnmanageableResource
-	{
-		public void Free() { /* interesting code goes here... */ }
-	}
+	public void Free() { /* interesting code goes here... */ }
 }

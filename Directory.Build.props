@@ -1,0 +1,14 @@
+<Project>
+	<PropertyGroup>
+		<AnalysisMode>all</AnalysisMode>
+		<Authors>Jason Bock</Authors>
+		<Copyright>Copyright © 2023</Copyright>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<NoWarn>CA1716,CA2007,CA1822,CS8321</NoWarn>
+		<Nullable>enable</Nullable>
+		<TargetFramework>net7.0</TargetFramework>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+</Project>

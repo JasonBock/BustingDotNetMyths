@@ -1,10 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
+using Concatenation;
 
-namespace Concatenation
-{
-	class Program
-	{
-		static void Main(string[] args) => 
-			BenchmarkRunner.Run<Concatenation300Parts>();
-	}
-}
+BenchmarkRunner.Run<Concatenation300Parts>();

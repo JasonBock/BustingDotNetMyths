@@ -1,38 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Variance;
 
-namespace Variance
-{
-	public static class Program
-	{
-		public static void Main(string[] args)
-		{
-			var invariantPuzzleProducer = new InvariantProducer<Puzzle>();
-			Console.Out.WriteLine(invariantPuzzleProducer.Produce().GetType().Name);
+var invariantPuzzleProducer = new InvariantProducer<Puzzle>();
+Console.WriteLine(invariantPuzzleProducer.Produce().GetType().Name);
 
-			var invariantCombinationPuzzleProducer = new InvariantProducer<CombinationPuzzle>();
-			Console.Out.WriteLine(invariantCombinationPuzzleProducer.Produce().GetType().Name);
+var invariantCombinationPuzzleProducer = new InvariantProducer<CombinationPuzzle>();
+Console.WriteLine(invariantCombinationPuzzleProducer.Produce().GetType().Name);
 
-			// Can't do this:
-			// invariantPuzzleProducer = invariantCombinationPuzzleProducer;
+// Can't do this:
+// invariantPuzzleProducer = invariantCombinationPuzzleProducer;
 
-			// Can't do this as well:
-			// IInvariantProducer<Puzzle> explicitInvariantProducer = new InvariantProducer<CombinationPuzzle>();
+// Can't do this as well:
+// IInvariantProducer<Puzzle> explicitInvariantProducer = new InvariantProducer<CombinationPuzzle>();
 
-			var covariantPuzzleProducer = new CovariantProducer<Puzzle>();
-			Console.Out.WriteLine(covariantPuzzleProducer.Produce().GetType().Name);
+var covariantPuzzleProducer = new CovariantProducer<Puzzle>();
+Console.WriteLine(covariantPuzzleProducer.Produce().GetType().Name);
 
-			var covariantCombinationPuzzleProducer = new CovariantProducer<CombinationPuzzle>();
-			Console.Out.WriteLine(covariantCombinationPuzzleProducer.Produce().GetType().Name);
+var covariantCombinationPuzzleProducer = new CovariantProducer<CombinationPuzzle>();
+Console.WriteLine(covariantCombinationPuzzleProducer.Produce().GetType().Name);
 
-			// Can't do this either:
-			// covariantPuzzleProducer = covariantCombinationPuzzleProducer;
+// Can't do this either:
+// covariantPuzzleProducer = covariantCombinationPuzzleProducer;
 
-			// But you can do this:
-			ICovariantProducer<Puzzle> explicitCovariantProducer = new CovariantProducer<CombinationPuzzle>();
+// But you can do this:
+ICovariantProducer<Puzzle> explicitCovariantProducer = new CovariantProducer<CombinationPuzzle>();
 
-			// Or this:
-			IReadOnlyList<Puzzle> puzzles = new List<CombinationPuzzle>();
-		}
-	}
-}
+// Or this:
+IReadOnlyList<Puzzle> puzzles = new List<CombinationPuzzle>();
