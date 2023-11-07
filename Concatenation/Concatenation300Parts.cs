@@ -1,11 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Jobs;
 using System.Text;
 
 namespace Concatenation;
 
 [MemoryDiagnoser]
-[SimpleJob(RuntimeMoniker.Net481), SimpleJob(RuntimeMoniker.Net70)]
 public class Concatenation300Parts
 {
 	private static readonly string dataOf5Length = StringCreation.Create(5);

@@ -1,4 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
 using Concatenation;
 
-BenchmarkRunner.Run<Concatenation300Parts>();
+BenchmarkRunner.Run<Concatenation3Parts>();
