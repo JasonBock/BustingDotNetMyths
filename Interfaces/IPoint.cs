@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace Interfaces;
+﻿namespace Interfaces;
 
 public interface IPoint
 {
