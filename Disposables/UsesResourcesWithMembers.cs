@@ -53,24 +53,14 @@ public class UsesResourcesWithMembers
 	{
 		get
 		{
-			if (this.isDisposed)
-			{
-				throw new ObjectDisposedException(
-					nameof(UsesResourcesWithMembers));
-			}
-
+			ObjectDisposedException.ThrowIf(this.isDisposed, this);
 			return "Data";
 		}
 	}
 
 	public void MarshalData(int value)
 	{
-		if (this.isDisposed)
-		{
-			throw new ObjectDisposedException(
-				nameof(UsesResourcesWithMembers));
-		}
-
+		ObjectDisposedException.ThrowIf(this.isDisposed, this);
 		Marshal.WriteInt32(this.nativeResource, value);
 	}
 }

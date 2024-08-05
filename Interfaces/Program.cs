@@ -7,7 +7,7 @@ Console.WriteLine($"Point.GetPolarCoordinates(): {((IPoint)point).GetPolarCoordi
 
 var originPoint = new Point(0.0, 0.0);
 Console.WriteLine($"Point at origin: {originPoint}");
-Console.WriteLine($"Point.GetPolarCoordinates() at origin: {((IPoint)point).GetPolarCoordinates()}");
+Console.WriteLine($"Point.GetPolarCoordinates() at origin: {((IPoint)originPoint).GetPolarCoordinates()}");
 
 Console.WriteLine();
 
