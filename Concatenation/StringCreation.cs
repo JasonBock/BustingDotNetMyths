@@ -6,7 +6,7 @@ internal static class StringCreation
 {
 	internal static string Create(int length)
 	{
-		using var random = new SecureRandom();
+		var random = new SecureRandom();
 		var data = new char[length];
 
 		for (var i = 0; i < length; i++)

@@ -1,6 +1,4 @@
-﻿using BenchmarkDotNet.Running;
-using CollatzConjectureWithIL;
-using Recursion;
+﻿using Recursion;
 
 //CollatzWithoutRecursion();
 CollatzWithRecursion();
@@ -37,23 +35,6 @@ static void CollatzWithRecursion()
 	Console.WriteLine();
 
 	var testHugeNumber = new CollatzConjecture(
-		Numbers.NumberThatWillAlwaysCauseStackOverflow);
-	Console.WriteLine($"Value: {testHugeNumber.Value}{Environment.NewLine}Iterations: {testHugeNumber.Iterations}");
-}
-
-static void CollatzUsingTailCall()
-{
-	var testSmall = new CollatzConjectureUsingTailCall(
-		Numbers.NumberThatIsSmall);
-	Console.WriteLine($"Value: {testSmall.Value}{Environment.NewLine}Iterations: {testSmall.Iterations}");
-	Console.WriteLine();
-
-	var testLargeNumber = new CollatzConjectureUsingTailCall(
-		Numbers.NumberThatIsLargeButSafe);
-	Console.WriteLine($"Value: {testLargeNumber.Value}{Environment.NewLine}Iterations: {testLargeNumber.Iterations}");
-	Console.WriteLine();
-
-	var testHugeNumber = new CollatzConjectureUsingTailCall(
 		Numbers.NumberThatWillAlwaysCauseStackOverflow);
 	Console.WriteLine($"Value: {testHugeNumber.Value}{Environment.NewLine}Iterations: {testHugeNumber.Iterations}");
 }

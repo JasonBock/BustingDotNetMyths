@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="Async/Async.csproj" />
+  <Project Path="CallStacks/CallStacks.csproj" />
+  <Project Path="Concatenation/Concatenation.csproj" />
+  <Project Path="Disposables/Disposables.csproj" />
+  <Project Path="Exceptions/Exceptions.csproj" />
+  <Project Path="GotosInRoslyn/GotosInRoslyn.csproj" />
+  <Project Path="GotoStatement/GotoStatement.csproj" />
+  <Project Path="Inference/Inference.csproj" />
+  <Project Path="Interfaces/Interfaces.csproj" />
+  <Project Path="Overloads/Overloads.csproj" />
+  <Project Path="Recursion/Recursion.csproj" />
+  <Project Path="ReferencesAndValues/ReferencesAndValues.csproj" />
+  <Project Path="Variance/Variance.csproj" />
+</Solution>
