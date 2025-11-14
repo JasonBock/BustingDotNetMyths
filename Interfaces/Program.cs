@@ -22,7 +22,7 @@ try
 {
 	safeOriginPoint.GetPolarCoordinates();
 }
-catch(NotSupportedException e)
+catch (NotSupportedException e)
 {
 	Console.WriteLine($"SafePoint.GetPolarCoordinates() at origin: {e.Message}");
 }

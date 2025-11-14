@@ -4,70 +4,102 @@
 
 .NET 4.8.1
 
-| Method                       | Mean      | Error    | StdDev   | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|----------------------------- |----------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
-| ConcatenateWithAddition      |  90.79 ns | 1.114 ns | 1.700 ns |  1.00 |    0.00 | 0.1529 |     642 B |        1.00 |
-| ConcatenateWithStringBuilder | 209.21 ns | 2.294 ns | 1.916 ns |  2.30 |    0.07 | 0.3767 |    1581 B |        2.46 |
-| ConcatenateWithInterpolation |  81.59 ns | 0.947 ns | 0.840 ns |  0.90 |    0.03 | 0.1529 |     642 B |        1.00 |
+| Method                       | Mean      | Error    | StdDev   | Ratio | Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |----------:|---------:|---------:|------:|-------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      |  51.21 ns | 0.140 ns | 0.131 ns |  1.00 | 0.1020 |      - |     642 B |        1.00 |
+| ConcatenateWithStringBuilder | 109.38 ns | 0.367 ns | 0.325 ns |  2.14 | 0.2512 | 0.0010 |    1581 B |        2.46 |
+| ConcatenateWithInterpolation |  49.71 ns | 0.171 ns | 0.152 ns |  0.97 | 0.1020 |      - |     642 B |        1.00 |
 
-.NET 7
+.NET 9
 
-| Method                       | Mean      | Error    | StdDev   | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|----------------------------- |----------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
-| ConcatenateWithAddition      |  66.96 ns | 1.248 ns | 1.106 ns |  1.00 |    0.00 | 0.1358 |     568 B |        1.00 |
-| ConcatenateWithStringBuilder | 132.24 ns | 2.090 ns | 1.955 ns |  1.98 |    0.05 | 0.3748 |    1568 B |        2.76 |
-| ConcatenateWithInterpolation |  76.09 ns | 0.805 ns | 0.753 ns |  1.14 |    0.02 | 0.1204 |     504 B |        0.89 |
+| Method                       | Mean     | Error    | StdDev   | Ratio |  Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 31.04 ns | 0.422 ns | 0.394 ns |  1.00 |  0.0329 |      - |     568 B |        1.00 |
+| ConcatenateWithStringBuilder | 71.55 ns | 0.317 ns | 0.281 ns |  2.31 |  0.0908 | 0.0004 |    1568 B |        2.76 |
+| ConcatenateWithInterpolation | 35.28 ns | 0.220 ns | 0.195 ns |  1.14 |  0.0292 |      - |     504 B |        0.89 |
+
+.NET 10
+
+| Method                       | Mean     | Error    | StdDev   | Ratio |  Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 29.04 ns | 0.381 ns | 0.338 ns |  1.00 |  0.0329 |      - |     568 B |        1.00 |
+| ConcatenateWithStringBuilder | 68.98 ns | 0.310 ns | 0.274 ns |  2.38 |  0.0908 | 0.0004 |    1568 B |        2.76 |
+| ConcatenateWithInterpolation | 32.21 ns | 0.123 ns | 0.115 ns |  1.11 |  0.0292 |      - |     504 B |        0.89 |
 
 ## Concatenation9Parts
 
 .NET 4.8.1
 
-| Method                       | Mean     | Error   | StdDev  | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|----------------------------- |---------:|--------:|--------:|------:|--------:|-------:|----------:|------------:|
-| ConcatenateWithAddition      | 283.1 ns | 5.64 ns | 9.58 ns |  1.00 |    0.00 | 0.4320 |   1.77 KB |        1.00 |
-| ConcatenateWithStringBuilder | 502.2 ns | 6.35 ns | 5.94 ns |  1.77 |    0.09 | 0.8278 |   3.39 KB |        1.92 |
-| ConcatenateWithInterpolation | 250.9 ns | 4.33 ns | 3.38 ns |  0.88 |    0.04 | 0.4320 |   1.77 KB |        1.00 |
+| Method                       | Mean     | Error   | StdDev  | Ratio | Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|--------:|--------:|------:|-------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 154.4 ns | 0.62 ns | 0.55 ns |  1.00 | 0.2880 |      - |   1.77 KB |        1.00 |
+| ConcatenateWithStringBuilder | 278.5 ns | 0.82 ns | 0.69 ns |  1.80 | 0.5522 | 0.0038 |   3.39 KB |        1.92 |
+| ConcatenateWithInterpolation | 149.3 ns | 0.35 ns | 0.33 ns |  0.97 | 0.2880 |      - |   1.77 KB |        1.00 |
 
-.NET 7
+.NET 9
 
-| Method                       | Mean     | Error   | StdDev  | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|----------------------------- |---------:|--------:|--------:|------:|--------:|-------:|----------:|------------:|
-| ConcatenateWithAddition      | 192.1 ns | 3.31 ns | 3.25 ns |  1.00 |    0.00 | 0.3939 |   1.61 KB |        1.00 |
-| ConcatenateWithStringBuilder | 286.1 ns | 5.12 ns | 4.79 ns |  1.49 |    0.04 | 0.8283 |   3.38 KB |        2.10 |
-| ConcatenateWithInterpolation | 240.6 ns | 3.55 ns | 3.32 ns |  1.25 |    0.03 | 0.3557 |   1.45 KB |        0.90 |
+| Method                       | Mean      | Error    | StdDev   | Ratio |  Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |----------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      |  87.91 ns | 1.505 ns | 1.407 ns |  1.00 |  0.0955 |      - |   1.61 KB |        1.00 |
+| ConcatenateWithStringBuilder | 149.99 ns | 0.977 ns | 0.866 ns |  1.71 |  0.2007 | 0.0014 |   3.38 KB |        2.10 |
+| ConcatenateWithInterpolation | 116.21 ns | 0.676 ns | 0.599 ns |  1.32 |  0.0862 |      - |   1.45 KB |        0.90 |
+
+.NET 10
+
+| Method                       | Mean      | Error    | StdDev   | Ratio |  Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |----------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      |  86.81 ns | 0.642 ns | 0.536 ns |  1.00 |  0.0955 |      - |   1.61 KB |        1.00 |
+| ConcatenateWithStringBuilder | 150.73 ns | 1.549 ns | 1.449 ns |  1.74 |  0.2007 | 0.0014 |   3.38 KB |        2.10 |
+| ConcatenateWithInterpolation | 107.97 ns | 0.593 ns | 0.526 ns |  1.24 |  0.0862 |      - |   1.45 KB |        0.90 |
 
 ## Concatenation30Parts
 
 .NET 4.8.1
 
-| Method                       | Mean       | Error    | StdDev    | Median     | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|----------------------------- |-----------:|---------:|----------:|-----------:|------:|--------:|-------:|----------:|------------:|
-| ConcatenateWithAddition      | 2,353.5 ns | 38.67 ns |  36.17 ns | 2,356.5 ns |  1.00 |    0.00 | 1.4114 |   5.79 KB |        1.00 |
-| ConcatenateWithStringBuilder | 1,763.8 ns | 77.57 ns | 216.22 ns | 1,660.0 ns |  0.72 |    0.04 | 2.8839 |  11.83 KB |        2.04 |
-| ConcatenateWithInterpolation |   941.3 ns | 17.81 ns |  18.29 ns |   939.7 ns |  0.40 |    0.01 | 1.4114 |   5.79 KB |        1.00 |
+| Method                       | Mean     | Error   | StdDev  | Ratio | Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|--------:|--------:|------:|-------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 524.8 ns | 1.59 ns | 1.32 ns |  1.00 | 0.9413 | 0.0010 |   5.79 KB |        1.00 |
+| ConcatenateWithStringBuilder | 915.6 ns | 2.81 ns | 2.49 ns |  1.74 | 1.9245 | 0.0505 |  11.83 KB |        2.04 |
+| ConcatenateWithInterpolation | 506.1 ns | 1.28 ns | 1.20 ns |  0.96 | 0.9413 | 0.0010 |   5.79 KB |        1.00 |
 
-.NET 7
+.NET 9
 
-| Method                       | Mean     | Error    | StdDev   | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|----------------------------- |---------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
-| ConcatenateWithAddition      | 665.6 ns | 10.77 ns | 10.08 ns |  1.00 |    0.00 | 1.2913 |   5.28 KB |        1.00 |
-| ConcatenateWithStringBuilder | 902.8 ns | 17.93 ns | 15.90 ns |  1.36 |    0.04 | 2.8839 |  11.79 KB |        2.23 |
-| ConcatenateWithInterpolation | 722.5 ns |  9.49 ns |  8.42 ns |  1.09 |    0.02 | 1.1730 |    4.8 KB |        0.91 |
+| Method                       | Mean     | Error   | StdDev  | Ratio | Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|--------:|--------:|------:|-------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 289.3 ns | 1.91 ns | 1.69 ns |  1.00 | 0.3133 | 0.0005 |   5.28 KB |        1.00 |
+| ConcatenateWithStringBuilder | 458.3 ns | 0.87 ns | 0.77 ns |  1.58 | 0.7000 | 0.0186 |  11.79 KB |        2.23 |
+| ConcatenateWithInterpolation | 297.2 ns | 1.10 ns | 1.03 ns |  1.03 | 0.2847 |      - |    4.8 KB |        0.91 |
+
+.NET 10
+
+| Method                       | Mean     | Error   | StdDev  | Ratio | Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|--------:|--------:|------:|-------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 288.4 ns | 2.69 ns | 2.52 ns |  1.00 | 0.3133 | 0.0005 |   5.28 KB |        1.00 |
+| ConcatenateWithStringBuilder | 456.1 ns | 1.74 ns | 1.45 ns |  1.58 | 0.7000 | 0.0186 |  11.79 KB |        2.23 |
+| ConcatenateWithInterpolation | 279.0 ns | 2.80 ns | 2.62 ns |  0.97 | 0.2847 |      - |    4.8 KB |        0.91 |
 
 ## Concatenation300Parts
 
 .NET 4.8.1
 
-| Method                       | Mean      | Error     | StdDev    | Median    | Ratio | RatioSD | Gen0    | Allocated | Alloc Ratio |
-|----------------------------- |----------:|----------:|----------:|----------:|------:|--------:|--------:|----------:|------------:|
-| ConcatenateWithAddition      | 21.930 us | 0.4378 us | 0.4096 us | 21.907 us |  1.00 |    0.00 | 13.8855 |  57.33 KB |        1.00 |
-| ConcatenateWithStringBuilder | 16.259 us | 0.9682 us | 2.6010 us | 15.027 us |  0.78 |    0.18 | 25.8179 | 106.34 KB |        1.85 |
-| ConcatenateWithInterpolation |  8.183 us | 0.0445 us | 0.0347 us |  8.186 us |  0.37 |    0.01 | 13.8855 |  57.33 KB |        1.00 |
+| Method                       | Mean     | Error     | StdDev    | Ratio | Gen0    | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|----------:|----------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 5.084 us | 0.0268 us | 0.0250 us |  1.00 |  9.2850 | 0.1068 |  57.34 KB |        1.00 |
+| ConcatenateWithStringBuilder | 8.840 us | 0.0219 us | 0.0194 us |  1.74 | 17.2272 | 2.8687 | 106.24 KB |        1.85 |
+| ConcatenateWithInterpolation | 4.797 us | 0.0136 us | 0.0114 us |  0.94 |  9.2850 | 0.1068 |  57.34 KB |        1.00 |
 
-.NET 7
+.NET 9
 
-| Method                       | Mean     | Error     | StdDev    | Ratio | RatioSD | Gen0    | Allocated | Alloc Ratio |
-|----------------------------- |---------:|----------:|----------:|------:|--------:|--------:|----------:|------------:|
-| ConcatenateWithAddition      | 6.483 us | 0.0894 us | 0.0792 us |  1.00 |    0.00 | 12.8174 |  52.57 KB |        1.00 |
-| ConcatenateWithStringBuilder | 8.186 us | 0.0970 us | 0.0859 us |  1.26 |    0.02 | 25.8484 | 106.09 KB |        2.02 |
-| ConcatenateWithInterpolation | 7.612 us | 0.0611 us | 0.0541 us |  1.17 |    0.02 | 11.6272 |  47.87 KB |        0.91 |
+| Method                       | Mean     | Error     | StdDev    | Ratio |  Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|----------:|----------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 2.941 us | 0.0314 us | 0.0294 us |  1.00 |  3.1128 | 0.0534 |  52.57 KB |        1.00 |
+| ConcatenateWithStringBuilder | 4.361 us | 0.0261 us | 0.0232 us |  1.48 |  6.2866 | 1.0452 | 106.09 KB |        2.02 |
+| ConcatenateWithInterpolation | 4.060 us | 0.0260 us | 0.0243 us |  1.38 |  2.8305 |      - |  47.87 KB |        0.91 |
+
+.NET 10
+
+| Method                       | Mean     | Error     | StdDev    | Ratio |  Gen0   | Gen1   | Allocated | Alloc Ratio |
+|----------------------------- |---------:|----------:|----------:|------:|--------:|-------:|----------:|------------:|
+| ConcatenateWithAddition      | 2.906 us | 0.0562 us | 0.0578 us |  1.00 |  3.1128 | 0.0534 |  52.57 KB |        1.00 |
+| ConcatenateWithStringBuilder | 4.323 us | 0.0416 us | 0.0389 us |  1.49 |  6.2866 | 1.0452 | 106.09 KB |        2.02 |
+| ConcatenateWithInterpolation | 3.999 us | 0.0198 us | 0.0165 us |  1.38 |  2.8305 |      - |  47.87 KB |        0.91 |
