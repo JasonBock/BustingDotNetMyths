@@ -24,11 +24,8 @@ public class UsesUnmanageableResourceAndImplementsIDisposableCorrectly
 	{
 		if (disposing)
 		{
-			if (this.resource is not null)
-			{
-				this.resource.Free();
-				this.resource = null;
-			}
+			this.resource?.Free();
+			this.resource = null;
 		}
 
 		if (this.nativeResource != IntPtr.Zero)
