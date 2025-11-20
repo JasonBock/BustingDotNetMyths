@@ -36,3 +36,18 @@ Console.WriteLine($"Parsed SafePoint.GetPolarCoordinates(): {parsedSafePoint.Get
 Console.WriteLine();
 
 Console.WriteLine($"safePoint + parsedSafePoint = {safePoint + parsedSafePoint}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
